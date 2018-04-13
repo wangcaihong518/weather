@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>腾讯天气</title>
+	<link rel="stylesheet" href="css/wea.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_608187_i01g7bmb51z1714i.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_608187_e2s97vshxcfbhuxr.css">
+	<link rel="shotcut icon" href="img/sun.png">
+	<script src="js/jquery3.2.1.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/index.js"></script>
+</head>
+<body>
+
+	<!-- 头部开始 -->
+	<section class="header">
+		<div class="header_city">
+			<i class="iconfont icon-location"></i>
+			<div class="header_city_txt">北京市海淀区</div>
+		</div>
+		<div class="air_top">空气</div>
+		<div class="air_bottom">轻度污染</div>
+		<div class="temperature">10°</div>
+		<div class="state">晴</div>
+		<div class="humidity">湿度57%</div>
+		<div class="bless">你若安好，便是晴天~</div>
+	</section>
+	<!-- 头部结束 -->
+	<!-- 介绍两天的情况开始-->
+	<section class="introduce">
+		<div class="introduce_main">
+			<div class="introduce-main_box">
+				<div class="introduce-main_box_small">
+					<div class="introduce-main_box_small_today">今天</div>
+					<div class="introduce_main_box_T">17/3°</div>
+				</div>
+				<div class="introduce-main_box_small">
+					<div class="introduce_main_box_T_wea" id="introduce_main_box_T_wea">晴转多云</div> 
+					<div class="pic"></div>
+				</div>
+			</div>
+			<div class="introduce-main_box">
+				<div class="introduce-main_box_small">
+					<div class="introduce-main_box_small_today">明天</div>
+					<div class="introduce_main_box_T" id="introduce_main_box_T">17/5°</div>
+				</div>
+				<div class="introduce-main_box_small">
+					<div class="introduce_main_box_T_wea" id="Tintroduce_main_box_T_wea">多云</div> 
+					<div class="introduce_main_box_T_pic"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 介绍两天的情况结束-->
+	<!-- 具体24小时的情况开始 -->
+	<section class="definite">
+		<ul class="ul">
+			<!-- <li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li class="li">
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li>
+			<li>
+				<div class="definite_up">21:00</div>
+				<div class="definite_mid"> </div>
+				<div class="definite_down">9°</div>
+			</li> -->
+		</ul>
+	</section>
+	<!-- 具体24小时的情况结束 -->
+	<!-- 每天的情况开始 -->
+	<section class="eve">
+		<ul class="eveul">
+			<!-- <li>
+				<div class="eve_date">
+					<span id="dateM">03</span>
+					<span id="dateG">/</span>
+					<span id="dateD">21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div  id="eve_temH">28°</div>
+				<div  id="eve_temL">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+					<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+					<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+					<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+					<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+					<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+				<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li>
+			<li>
+					<div class="eve_date">
+					<span>03</span>
+					<span>/</span>
+					<span>21</span>
+				</div>
+				<div class="eve_discription">多云</div>
+				<div class="eve_picH"></div>
+				<div class="eve_tem">28°</div>
+				<div class="eve_tem">10°</div>
+				<div class="eve_picL"></div>
+				<div class="eve_discription">阴</div>
+				<div class="wind">南风</div>
+				<div class="level">3级</div>
+			</li> -->
+		</ul>
+	</section>
+	<!-- 每天的情况结束 -->
+	<!-- 温馨提示开始 -->
+	<section class="warm_prompt">
+		<ul>
+			<li>
+				<div class="warm_img"><img src="img/che.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+			<li>
+				<div class="warm_img"><img src="img/coat.png" alt=""></div>
+				<div class="warm_txt1">较冷</div>
+				<div class="warm_txt2">穿衣</div>
+			</li>
+			<li>
+				<div class="warm_img"><img src="img/umbrella.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+			<!-- <li class="box1"> -->
+			<li>
+				<div class="warm_img"><img src="img/medicine.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+			<!-- <li class="box2"> -->
+			<li>
+				<div class="warm_img"><img src="img/washcar.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+			<!-- <li class="box2"> -->
+			<li>
+				<div class="warm_img"><img src="img/football.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+			<!-- <li class="box2"> -->
+			<li>
+				<div class="warm_img"><img src="img/sun.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+			<!-- <li class="box1" class="box2"> -->
+			<li>
+				<div class="warm_img"><img src="img/fish.png" alt=""></div>
+				<div class="warm_txt1">3和8</div>
+				<div class="warm_txt2">尾号限行</div>
+			</li>
+		</ul>
+	</section>
+	<!-- 温馨提示结束 -->
+	<!-- 底部开始-->
+	<section class="bottom1">
+		<div class="source">数据来源于中国天气网</div>
+		<div class="feedback">反馈</div>
+		<div class="report">举报</div>
+	</section>
+	<section class="bottom2">Copyright © 1998 - 2018 Tencent. All Rights Reserved</section>
+	<!-- 底部结束-->
+	<!-- 搜索头部开始 -->
+	<section class="search" id="search">
+		<div class="search_header">
+			<div class="search_header_left">
+				<div class="search_header_left_pic"></div>
+				<input type="text" placeholder="搜索地区/景点">
+			</div>
+			<div class="search_header_right">取消</div>
+		</div>
+		<!-- 热门城市开始 -->
+		<section class="hot_city">
+			<!-- <h2 class="title">热门城市</h2> -->
+				<!-- <ul id="city">
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+				</ul> -->
+			<!-- <h2 class="title">山西</h2>
+				<ul id="city">
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+					<li>北京</li>
+				</ul> -->
+			
+		</section>
+		
+		<!-- 热门城市结束 -->
+		<!-- 热门景区开始 -->
+		<section class="jingqu">
+			<h2>热门景区</h2>
+			<ul>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				<li>故宫</li>
+				
+
+			</ul>
+
+
+		</section>
+		<!-- 热门景区结束 -->
+	</section>
+	<!-- 搜索头部结束 -->
+	
+</body>
+</html>
+
+
+
